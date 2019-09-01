@@ -1,0 +1,29 @@
+Configuración de Menús en Odoo 10.
+
+Activar modo de desarrollador  Configuración  Técnico  Interfaz de usuario  Elementos de menú
+
+Jerarquía modo árbol  Configuración/Usuarios/Grupos.
+
+Crear una nueva opción de menú  Productos  La vamos a duplicar.
+
+Configuración  Técnico  Interfaz de usuario  Elementos de menú
+
+Inventario/Control/ Inventario/Productos  clic  en la pestaña desplegable  Acción  seleccionamos  Duplicar
+
+
+Menú padre  lo quitamos porque los que aparecen “” no tienen padre. Guardamos.
+
+No aparece Productos ya en el menú porque en Odoo si un elemento de menú no está asignado a ningún grupo por defecto aparece para todos los grupos.
+
+Para que solo lo vea usuarios avanzados  Grupos  buscamos usuario avanzado  Editamos Vamos a pestaña Menús  Añadir elemento  Buscamos Productos  Guardamos.
+
+-------
+Clic Grupos  Inventario/Usuario  Herencia podemos ver porqué por defecto nos viene Empleado, lo hereda.
+
+Vamos a  Permisos de acceso  en esta pestaña podemos modificar los permisos del usuario  Para ello  Editar  clicamos o desclicamos según preferencias.
+
+Crear un roll nuevo  Usuario Avanzado  Creamos un nuevo grupo  Usuarios  Grupos  Nuevo
+
+Rellenamos como en la imagen inferior. Vamos a pestaña  Heredar  le decimos que herede todos los permisos que tiene Usuario y además le añadimos en  Permisos de acceso  Leer y escribir y crear sobre producto  Pestaña Objeto  le damos los permisos  Leer, escribir y crear.
+
+Antes de guardar hay que ponerle nombre a la regla.

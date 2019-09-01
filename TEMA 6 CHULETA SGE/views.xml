@@ -1,0 +1,132 @@
+  <!-- Vista árbol para categoría -->
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="libreria.categoria_tree">
+      <field name="name">libreria.categoria.tree</field>
+      <field name="model">libreria.categoria</field>    <!--Modelo sobre el que tiramos -->
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/> <!--Vamos a models y models.py ponemos los campos-->
+          <field name="descripcion"/>
+
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="libreria.categoria_form">
+      <field name="name">libreria.categoria.form</field>
+      <field name="model">libreria.categoria</field>    <!--Modelo sobre el que tiramos -->
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="2" col="2">
+              <field name="name"/> <!--Vamos a models y models.py ponemos los campos-->
+              <field name="descripcion"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="libreria.libro_tree">
+      <field name="name">Libros</field>
+      <field name="model">libreria.libro</field>    <!--Modelo sobre el que tiramos -->
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/> <!--Vamos a models y models.py ponemos los campos-->
+          <field name="precio"/>
+          <field name="ejemplares"/>
+        </tree>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="libreria.libro_form">
+      <field name="name">Libros</field>
+      <field name="model">libreria.libro</field>    <!--Modelo sobre el que tiramos -->
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/> <!--Vamos a models y models.py ponemos los campos-->
+            <field name="precio"/>
+            <field name="ejemplares"/>
+            <field name="fecha"/> <!--Vamos a models y models.py ponemos los campos-->
+            <field name="segmano"/>
+            <field name="descripcion"/>
+            <field name="estado"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- ACCION VENTANA  -->
+    <!-- Tendremos dos una para categoria y otra para libro -->
+    <record model="ir.actions.act_window" id="libreria.categoria_action_window">
+      <field name="name">Categorias</field>
+      <field name="res_model">libreria.categoria</field>
+      <field name="view_mode">tree,form</field>    <!-- A Las vista que tenemos en ese orden de aparición  -->
+    </record>
+    <record model="ir.actions.act_window" id="libreria.libro_action_window">
+      <field name="name">Libros</field>
+      <field name="res_model">libreria.libro</field>
+      <field name="view_mode">tree,form</field>    <!-- A Las vista que tenemos en ese orden de aparición  -->
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="librer.action_server">
+      <field name="name">librer server</field>
+      <field name="model_id" ref="model_librer_librer"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="Librería" id="libreria.menu_root"/>     <!-- name el que nos de la gana -->
+
+    <!-- menu categories -->
+
+    <menuitem name="Categorias" id="libreria.categoria_menu" action="libreria.categoria_action_window"
+       parent="libreria.menu_root"/>
+    <menuitem name="Libros" id="libreria.libro_menu" action="libreria.libro_action_window"
+      parent="libreria.menu_root"/>
+
+<!-- Top menu item -->
+    <menuitem name="Librería" id="libreria.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Categorías" id="libreria.categoria_menu" action="libreria.categoria_action_window" parent="libreria.menu_root"/> <!-- action mete la acción de ventana -->
+    <menuitem name="Libros" id="libreria.libro_menu" action="libreria.libro_action_window" parent="libreria.menu_root"/>
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="librer.menu_1_list" parent="librer.menu_1"
+              action="librer.action_window"/>
+    <menuitem name="Server to list" id="librer" parent="librer.menu_2"
+              action="librer.action_server"/>
+    -->
+
+ <!-- campos buscados exactos like sql contains -->
+Vamos a las vistas antes de las acciones de ventana --> añadir una vista de búsqueda
+Solo buscamos por Char o text
+
+    <record model="ir.ui.view" id="libreria.categoria_search">
+      <field name="name">Libros</field>
+      <field name="model">libreria.libro</field>    <!--Modelo sobre el que tiramos -->
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/> <!--Campos por los que buscar-->
+          <field name="descripcion"/>
+          <filter name="baratos" dominio="[('precio','&lt;=',5)]"/>
+        </search>
+      </field>
+
+<!-- Filtros lo metemos en las búsquedas-->
+
+  </data>
+</odoo>

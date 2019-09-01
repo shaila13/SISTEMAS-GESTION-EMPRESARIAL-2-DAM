@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+      <report
+        id="report_empresa"
+        model="practicasfct.empresa"
+        string="Informe empresa/s"
+        name="practicasfct.report_empresa_view"
+        file="practicasfct.report_empresa_view"
+        report_type="qweb-pdf"/>
+
+        <template id="practicasfct.report_empresa_view">
+          <t t-call="report.html_container">
+            <t t-call="report.external_layout">
+              <t t-foreach="docs" t-as="empresa">
+                <div class="page">
+                  <h2 t-field="empresa.name" style="padding-top:100px"/>
+                  <div>
+                    <strong>Direccion:</strong>
+                    <span t-field="empresa.direccion"/>
+                  </div>
+                  <div>
+                    <strong>Alumnos:</strong>
+                  <t t-foreach="empresa.alumnos" t-as="alumno">
+                      <span t-field="alumno.name"/>
+                  </t>
+                </div>
+                  <h1>---------------------------------------------------------------</h1>
+                  </div>
+                </t>
+            </t>
+          </t>
+        </template>
+    </data>
+</odoo>
+

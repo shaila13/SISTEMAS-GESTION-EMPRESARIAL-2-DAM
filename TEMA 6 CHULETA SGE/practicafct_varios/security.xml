@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+  	    <!-- Escribimos un record por cada uno de los roles	-->
+
+<record id="practicasfct_coordinador" model="res.groups">
+<field name="name"> Practicas-Coordinador</field>
+</record>
+
+
+<record id="practicasfct_profesor" model="res.groups">
+<field name="name"> Practicas-Profesor</field>
+</record>
+  </data>
+</odoo>
+ 	    <!-- Vamos al CSV	y tenemos que cargarlo en el manifest en data security/security.xml, poner el primero para que cree los grupos antes y descomentar el # y en los menus le vamos a decir que solo lo muestre para los grupos que tengan permisos
+	menuitem name="" groups="practicasfct_coordinador" o groups="practicasfct_profesor"
+	y en los hijos Si tenemos varios separamos por , -->
+
+ 	 	<!-- Para meter un icono hay que ir al cliente de window y subir ahí la imagen, vamos a odoo/addons/practicasfct y creamos carpeta static y description, reiniciar el servidor y actualizar	-->
+		<!-- Vamos a atom en la carpeta data y creamos data.xml y aquí pondremos los datos -->

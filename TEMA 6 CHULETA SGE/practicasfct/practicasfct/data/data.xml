@@ -1,0 +1,25 @@
+<odoo>
+  <data>
+    <!--
+    <record model="practicasfct.alumno">
+      <field name="name">Pepe</field>
+            <field name="name">Pepe</field>
+    </record>
+    <record model="practicasfct.alumno">
+      <field name="name">Mariano</field>
+    </record>
+
+    apellidos = fields.Char(string="Apellidos", help="Introduce los apellidos del alumno",required=True)
+      fechanacimiento= fields.Date(string="Fecha de nacimiento", help="Introduce la fecha de nacimiento",required=True)
+      cicloformativo = fields.Selection([('0','DAM'),('1','DAW'),('2','ASIR')],default='0',string="Clico formativo", help="Selecciona el ciclo que está cursando el alumno",required=False)
+      #para darle las opciones al combo  es una lista, en cada elemento hay una tupla
+
+      #manyToone un estudiante solo puede tener una empresa de prácticas, (contra objeto que queremos la relacion, nombre, campo requerido, que pasa cuando se borra)
+      #tira sobre name, por eso hay que ponerlo siempre
+      empresa = fields.Many2one("practicasfct.empresa",string="Empresa", required=True,ondelete="cascade", help="Selecciona la empresa de prácticas.")
+      #Si la nota numérica está entre 5 y 7: aprobado; entre 7 y 9: notable; entre 9 y 10:sobresaliente.
+
+      notamedia = fields.Float(string="Nota media", help="Introduce la nota media del alumno.",required=False)
+
+-->
+</data>  </odoo>

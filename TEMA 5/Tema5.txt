@@ -1,0 +1,6 @@
+
+Tener configurado el log --> para los errores
+
+Tenemos que modificar el servidor para trabajar con él, en odoo home --> cd ~ --> ls nano nombre archivo
+
+

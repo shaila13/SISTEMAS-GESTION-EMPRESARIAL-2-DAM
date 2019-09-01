@@ -1,0 +1,18 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+Hay dos campos que son ids que no nos importan, el primer campo. 
+
+practicasfct_alumno_responsable, categoria responsable, model_practicasfct_alumno (este es importante --> objeto sobre el que queremos dar permisos), practicasfct_coordinador,1,1,1,1 (para que haga todo)
+
+practicasfct_empresa_responsable, categoria responsable, model_practicasfct_categoria,practicasfct_profesor (este es importante),1,0,0,0 (solo lectura)
+
+practicasfct_alumno
+practicasfct_empresa
+
+Ejemplo libreria
+
+categoria_manager (id unico, sin espacios y mejor guion bajo), categoria manager(lo mismo que el id pero con espacios, nombre puede llevar espacios), model_liberia_categoria (IMPORTANTE:sobre que objeto damos permisos, hay que poner por obligacion model_), libreria_manager (no sabemos si hay que poner group_), 1,1,1,1 (permisos)
+
+libro_manager (id unico, sin espacios y mejor guion bajo), libro manager(lo mismo que el id pero con espacios, nombre puede llevar espacios), model_liberia_libro (IMPORTANTE:sobre que objeto damos permisos, hay que poner por obligacion model_), libreria_manager(no sabemos si hay que poner group_ NO LO LLEVA), 1,1,1,1 (permisos)
+
+Tema menús --> solo queremos que se vean quién tenga el rol

@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+  	    <!-- Escribimos las lineas	-->
+
+<record model="practicasfct_alumno">
+<field name="name"> Practicas-Coordinador</field>
+</record>
+
+
+  </data>
+</odoo>
+
+ 	    <!-- Meterlo el último en el manifest data/data.xml	-->    
+ 	    <!-- Vamos a demo es para datos de demostracion-->

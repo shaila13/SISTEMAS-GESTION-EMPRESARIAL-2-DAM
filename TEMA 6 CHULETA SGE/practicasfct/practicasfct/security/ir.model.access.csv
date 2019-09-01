@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+practicasfct_coordinador_alumno,practicasfct coordinador alumno,model_practicasfct_alumno,practicasfct_coordinador,1,1,1,1
+
+practicasfct_coordinador_empresa,practicasfct coordinador empresa,model_practicasfct_empresa,practicasfct_coordinador,1,1,1,1
+
+practicasfct_profesor_alumno,practicasfct profesor alumno,model_practicasfct_alumno,practicasfct_profesor,1,0,0,0
+
+practicasfct_profesor_empresa,practicasfct profesor empresa,model_practicasfct_empresa,practicasfct_profesor,1,0,0,0

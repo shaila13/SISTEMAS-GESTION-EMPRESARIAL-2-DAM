@@ -1,0 +1,86 @@
+1º CREAR UNA NUEVA BASE DE DATOS
+
+2º INSTALAR LOS MÓDULOS NECESARIOS PARA TRABAJAR
+(Configurar la contabilidad antes)
+
+Vistas que debemos controlar: formulario (form), árbol (tree) es una tabla, kamban (html) si lleva imagen y searchView para hacer búsquedas.
+
+Desplegable del escarabajo --> editar las vistas que tengamos --> searchView y tree.
+
+<field> --> campo de base de datos.
+
+<group> --> grupos, para organizar información en secciones en la vista.
+
+<tabs> --> pestañas. ???¿¿¿
+
+x_fecha_alta --> elemento que creamos nosotros.
+
+Fecha alta --> etiqueta de campo. (mejor ponerlo en inglés y luego hacer la traducción).
+
+Tipo de campo --> desplegable --> date --> Ponemos que sea requerido.(selection --> combo que no tira contra otra tabla.) 
+(Si ponemos en el xml invisible = 1 no se muestra en la vista).
+
+
+---- CREAR UN OBJETO NUEVO
+
+CREAR UNA NUEVA TABLA
+
+En configuracion --> modelos
+Después de crear los campos --> guardar --> hacer vistas --> tree y form (las mínimas)
+
+Interfaz de usuario --> vistas --> x_nombre.form o x_nombre.tree
+
+Poner el nombre de la tabla bien escribir la vista en estructura --> guardar
+Particularidad del form --> meter en un grupo por lo menos.
+
+--- MENU
+
+Los menús van asociados a una acción de ventana. Posteriormente haremos el menú.
+Para acceder a las vistas --> vamos a configuracion --> Acciones --> acción de ventana --> creamos una nueva
+
+nombre acción: x_nombre_accion (esto sale en la vista, poner un nombre más coherente)
+
+id externo: x_nombre
+
+En Vistas deben aparecer las vistas tree y form (las que tengamos)
+
+Vamos a elementos de menu
+
+Tienen gerarquia en forma de árbol
+
+Los que no tienen padre están en el menú en negro --> creamos uno nuevo
+
+Menu nombre
+Menu padre: "Ventas"
+Accion -->ir.actions.act --> x_nombre_accion
+
+
+
+
+
+---- PERMISOS
+
+Cada usuario tiene una serie de roles 
+
+Vamos a configuracion --> usuario --> grupos
+
+inventario / usuario (rol)
+
+Podemos tener todos los roles que queramos. Mejor no tocar los roles que ya hay es mejor hacer uno nuevo y que herede.
+
+Hacer un rol nuevo --> crear grupo
+Aplicacion: Inventario (en este caso)
+Nombre: usuarioAvanzado
+Hereda de inventario/usuario
+
+guardamos ya tenemos los permisos del otro --> vamos a permisos
+Objeto: producto
+Nombre: nombre de la regla (da igual el nombre) : plantilla eliminar
+
+Objeto: plantilla producto
+Nombre: nombre de la regla (da igual el nombre) : plantilla eliminar
+
+Hay que tocar ambos para que te deje eliminar un producto.
+
+TRUCO --> para probar usuarios --> meternos en un navegador nuevo creando un usuario y asignando el nuevo roll.
+

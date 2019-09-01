@@ -1,0 +1,17 @@
+<odoo>
+  <data>
+      	<!-- Se utiliza para definir los grupos	-->
+  	    <!-- Escribimos un record por cada grupo	-->
+  	    <!-- model siempre es lo mismo, el id es contra que el que vamos a hacer los grupos	-->
+        <!-- Tenemos que definir una entrada por cada grupo o rol	-->
+
+        <record id="practicasfct_coordinador" model="res.groups">
+              <field name="name"> Practicas / Coordinador</field>
+        </record>
+
+        <record id="practicasfct_profesor" model="res.groups">
+              <field name="name">Practicas / Profesor</field>
+        </record>
+
+  </data>
+</odoo>

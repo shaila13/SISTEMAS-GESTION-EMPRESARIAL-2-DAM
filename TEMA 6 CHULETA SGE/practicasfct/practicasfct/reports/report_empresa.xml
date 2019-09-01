@@ -1,0 +1,48 @@
+<odoo>
+  <data>
+    <record id="ejemplo" model="report.paperformat">
+  <field name="name">ejemplo</field>
+  <field name="default" eval="True"/>
+  <field name="orientation">Portrait</field>
+  <field name="header_line" eval="False"/>
+</record>
+      <report
+        id="report_empresa"
+        model="practicasfct.empresa"
+        string="Informe empresa/s"
+        name="practicasfct.report_empresa_view"
+        file="practicasfct.report_empresa_view"
+        report_type="qweb-pdf"
+        paperformat="ejemplo"/>
+
+        <template id="practicasfct.report_empresa_view">
+          <t t-call="report.html_container">
+            <t t-call="report.external_layout">
+			<div class="page">
+              <t t-foreach="docs" t-as="empresa">
+
+                  <h2 t-field="empresa.name" />
+                  <div>
+                    <strong>Direccion empresa:</strong>
+                    <span t-field="empresa.direccion"/>
+                  </div>
+                  <div>
+                    <strong>ALUMNOS</strong>
+                  <t t-foreach="empresa.alumnos" t-as="alumno">
+                      <h5>--------------------------------------------------------------------------</h5>
+                      <p><strong>Nombre: </strong><span t-field="alumno.name"/></p>
+                      <p><strong>Apellidos: </strong><span t-field="alumno.apellidos"/></p>
+                      <p><strong>Fecha nacimiento:</strong><span t-field="alumno.fechanacimiento"/></p>
+                      <p><strong>Ciclo formativo: </strong> <span t-field="alumno.cicloformativo"/></p>
+                      <p><strong>Nota media:</strong> <span t-field="alumno.notamedia"/></p>
+
+                  </t>
+
+                </div>
+
+                </t>              </div>
+            </t>
+          </t>
+        </template>
+    </data>
+</odoo>
